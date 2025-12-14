@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <title>Elpošana • Garīgās veselības centrs</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+<header class="site-header">
+  <div class="header-hero" style="min-height:420px">
+    <div class="navbar container">
+      <a class="brand" href="index.html">
+        <span>Garīgās veselības centrs</span>
+      </a>
+      <button class="nav-toggle" type="button"
+        data-nav-toggle
+        aria-controls="primaryNav"
+        aria-expanded="false"
+        aria-label="Atvērt izvēlni">
+        ☰
+      </button>
+      <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
+        <a href="breathing.html" aria-current="page">Elpošana</a>
+        <a href="diary.html">Dienasgrāmata</a>
+        <a href="reminders.html">Atgādinājumi</a>
+        <a href="about.html">Par mums</a>
+      </nav>
+    </div>
+    <div class="hero-content container" style="padding-top:140px">
+      <h1 class="hero-title" style="font-size:40px">Elpošanas vingrinājumi</h1>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page container">
+  <section class="two-col" aria-label="Elpošanas vingrinājumi un taimeris">
+    <div class="panel">
+      <div class="field">
+        <label for="mode">Tehnika</label>
+        <select id="mode" aria-label="Izvēlies elpošanas tehniku">
+          <option value="478">4-7-8 tehnika</option>
+          <option value="belly">Dziļā vēdera elpošana</option>
+          <option value="box">Kvadrāta elpošana</option>
+        </select>
+        <p class="helper">Izvēlies tehniku un nospied “Sākt”. Ja nepieciešams — “Apturēt”.</p>
+      </div>
+
+      <div class="exercise-list" style="margin-top:10px">
+        <article class="exercise">
+          <div class="badge" aria-hidden="true">4-7-8</div>
+          <div>
+            <h3>4-7-8 tehnika</h3>
+            <p>Vienkārša metode, kas palīdz ātri nomierināties: ieelpa uz 4 sekundēm, aizture uz 7, izelpa uz 8 sekundēm.</p>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <div class="badge" aria-hidden="true">Deep</div>
+          <div>
+            <h3>Dziļā vēdera elpošana</h3>
+            <p>Elpo ar diafragmu, lai palielinātu skābekļa daudzumu un samazinātu spriedzi ķermenī.</p>
+          </div>
+        </article>
+
+        <article class="exercise">
+          <div class="badge" aria-hidden="true">Quad</div>
+          <div>
+            <h3>Kvadrāta elpošana</h3>
+            <p>Ieelpa – 4 sekundes → aizture – 4 sekundes → izelpa – 4 sekundes → aizture – 4 sekundes. Ļoti efektīva stresa mazināšanai.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel breath-wrap">
+      <div class="breath-circle" data-breath-circle aria-live="polite">Ieelpo</div>
+      <div class="breath-meta" data-breath-meta>Izvēlies tehniku un nospied “Sākt”.</div>
+      <div style="display:flex;gap:12px;margin-top:18px">
+        <button class="btn" type="button" data-breath-start>Sākt</button>
+        <button class="btn secondary" type="button" data-breath-stop>Apturēt</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>© <span data-year></span> Garīgās veselības centrs • Prototips (HTML/CSS/JS)</small>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{const y=document.querySelector("[data-year]"); if(y) y.textContent=new Date().getFullYear();});
+</script>
+<script src="js/breathing.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <title>Par mums • Garīgās veselības centrs</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+<header class="site-header">
+  <div class="header-hero" style="min-height:420px">
+    <div class="navbar container">
+      <a class="brand" href="index.html">
+        <span>Garīgās veselības centrs</span>
+      </a>
+      <button class="nav-toggle" type="button"
+        data-nav-toggle
+        aria-controls="primaryNav"
+        aria-expanded="false"
+        aria-label="Atvērt izvēlni">
+        ☰
+      </button>
+      <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
+        <a href="breathing.html">Elpošana</a>
+        <a href="diary.html">Dienasgrāmata</a>
+        <a href="reminders.html">Atgādinājumi</a>
+        <a href="about.html" aria-current="page">Par mums</a>
+      </nav>
+    </div>
+    <div class="hero-content container" style="padding-top:140px">
+      <h1 class="hero-title" style="font-size:40px">Par mums</h1>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page container">
+  <section class="panel about-grid" aria-label="Par mums saturs">
+    <div>
+      <p style="margin-top:0">
+        Mūsu mērķis ir palīdzēt jauniešiem rūpēties par garīgo veselību, izmantojot vienkāršus un pieejamus rīkus.
+        Apvienojot elpošanas vingrinājumus, noskaņojuma dienasgrāmatu un atgādinājumus, mēs radām vidi,
+        kas palīdz saglabāt mieru un līdzsvaru ikdienā.
+      </p>
+
+      <h2 style="font-family:Montserrat,system-ui,sans-serif;color:var(--green-dark);margin:22px 0 10px;font-size:22px">Mūsu kontakti:</h2>
+      <div class="contact">
+        <div><strong>E-pasts:</strong> <a href="mailto:testpasts@gmail.com">testpasts@gmail.com</a></div>
+        <div><strong>Tālrunis:</strong> <a href="tel:+37127007321">+371 27007321</a></div>
+      </div>
+    </div>
+
+    <div>
+      <img src="assets/team.png" alt="Ilustrācija ar cilvēku grupu" loading="lazy">
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>© <span data-year></span> Garīgās veselības centrs • Prototips (HTML/CSS/JS)</small>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{const y=document.querySelector("[data-year]"); if(y) y.textContent=new Date().getFullYear();});
+</script>
+</body>
+</html>

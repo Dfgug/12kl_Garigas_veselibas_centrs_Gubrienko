@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <title>Atgādinājumi • Garīgās veselības centrs</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+<header class="site-header">
+  <div class="header-hero" style="min-height:420px">
+    <div class="navbar container">
+      <a class="brand" href="index.html">
+        <span>Garīgās veselības centrs</span>
+      </a>
+      <button class="nav-toggle" type="button"
+        data-nav-toggle
+        aria-controls="primaryNav"
+        aria-expanded="false"
+        aria-label="Atvērt izvēlni">
+        ☰
+      </button>
+      <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
+        <a href="breathing.html">Elpošana</a>
+        <a href="diary.html">Dienasgrāmata</a>
+        <a href="reminders.html" aria-current="page">Atgādinājumi</a>
+        <a href="about.html">Par mums</a>
+      </nav>
+    </div>
+    <div class="hero-content container" style="padding-top:140px">
+      <h1 class="hero-title" style="font-size:40px">Atgādinājumi</h1>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="page container">
+  <section class="panel" aria-label="Atgādinājumu saraksts">
+    <p class="muted" style="margin-top:0">
+      Iestatiet ikdienas atgādinājumus, lai neaizmirstu par elpošanas vingrinājumiem, noskaņojuma pierakstiem un veselīgiem ieradumiem.
+    </p>
+
+    <div class="reminders-list" data-reminders>
+      <div class="reminder">
+        <div>
+          <div class="name">Elpošanas pauze – katru dienu plkst. 10:00</div>
+          <div class="muted" style="font-size:13px">Īss vingrinājums dienas vidū.</div>
+        </div>
+        <label class="switch" aria-label="Pārslēgt elpošanas pauzes atgādinājumu">
+          <input id="r-breath" type="checkbox">
+          <span class="slider" aria-hidden="true"></span>
+        </label>
+      </div>
+
+      <div class="reminder">
+        <div>
+          <div class="name">Noskaņojuma pieraksts – pirms miega</div>
+          <div class="muted" style="font-size:13px">Piefiksē sajūtas un domas dienas beigās.</div>
+        </div>
+        <label class="switch" aria-label="Pārslēgt noskaņojuma pieraksta atgādinājumu">
+          <input id="r-diary" type="checkbox">
+          <span class="slider" aria-hidden="true"></span>
+        </label>
+      </div>
+
+      <div class="reminder">
+        <div>
+          <div class="name">Iknedēļas pārskats – svētdienās plkst. 20:00</div>
+          <div class="muted" style="font-size:13px">Paskaties, kas palīdzēja visvairāk.</div>
+        </div>
+        <label class="switch" aria-label="Pārslēgt iknedēļas pārskata atgādinājumu">
+          <input id="r-weekly" type="checkbox">
+          <span class="slider" aria-hidden="true"></span>
+        </label>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>© <span data-year></span> Garīgās veselības centrs • Prototips (HTML/CSS/JS)</small>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{const y=document.querySelector("[data-year]"); if(y) y.textContent=new Date().getFullYear();});
+</script>
+<script src="js/reminders.js" defer></script>
+</body>
+</html>

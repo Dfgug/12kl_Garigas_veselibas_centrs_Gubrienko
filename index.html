@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="lv">
+
+<head>
+  <title>Garīgās veselības centrs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="home">
+<a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+<header class="site-header">
+  <div class="header-hero">
+    <div class="navbar container">
+      <a class="brand" href="index.html">
+        <span>Garīgās veselības centrs</span>
+      </a>
+      <button class="nav-toggle" type="button"
+        data-nav-toggle
+        aria-controls="primaryNav"
+        aria-expanded="false"
+        aria-label="Atvērt izvēlni">
+        ☰
+      </button>
+      <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
+        <a href="breathing.html">Elpošana</a>
+        <a href="diary.html">Dienasgrāmata</a>
+        <a href="reminders.html">Atgādinājumi</a>
+        <a href="about.html">Par mums</a>
+      </nav>
+    </div>
+</div>
+</header>
+
+<main id="main" class="page" aria-label="Sākumlapa">
+  
+  <section class="page-hero" aria-label="Ievads">
+    <div class="container">
+      <h1 class="hero-title">Atbrīvo prātu. Uzlabo savu ikdienu.</h1>
+      <p class="hero-subtitle">
+        Stress ir ikdienas daļa, bet ar to nav jācīnās vienatnē. Mūsu mājaslapa piedāvā vienkāršus rīkus jauniešiem,
+        lai mazinātu trauksmi, uzlabotu noskaņojumu un atrastu līdzsvaru.
+        Ar elpošanas vingrinājumiem, relaksācijas tehnikām un noskaņojuma dienasgrāmatu rūpes par garīgo veselību kļūst
+        par nelielu, bet nozīmīgu soli tavā dienā.
+      </p>
+    </div>
+  </section>
+
+  <div class="container"><h2 class="section-title">Mēs esam šeit, lai palīdzētu tev atrast mieru un līdzsvaru.</h2>
+
+  <section class="grid-3" aria-label="Galvenās iespējas">
+    <article class="card">
+      <div class="icon" aria-hidden="true">
+        <img src="assets/icons/lps.png" alt="" width="44" height="44">
+      </div>
+      <h3>Elpo vieglāk.</h3>
+      <p>Veic īsus elpošanas un relaksācijas vingrinājumus, lai mazinātu stresu jebkurā laikā un vietā.</p>
+      <a class="btn-link" href="breathing.html">Uzzināt vairāk</a>
+    </article>
+
+    <article class="card">
+      <div class="icon" aria-hidden="true">
+        <img src="assets/icons/blk.png" alt="" width="44" height="44">
+      </div>
+      <h3>Pieraksti noskaņojumu.</h3>
+      <p>Izmanto vienkāršu dienasgrāmatu, lai atspoguļotu savas sajūtas un sekotu progresam.</p>
+      <a class="btn-link" href="diary.html">Uzzināt vairāk</a>
+    </article>
+
+    <article class="card">
+      <div class="icon" aria-hidden="true">
+        <img src="assets/icons/lds.png" alt="" width="44" height="44">
+      </div>
+      <h3>Atrodi līdzsvaru.</h3>
+      <p>Izveido ikdienas rutīnu ar atgādinājumiem un ieradumiem, kas stiprina labsajūtu.</p>
+      <a class="btn-link" href="reminders.html">Uzzināt vairāk</a>
+    </article>
+  </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>© <span data-year></span> Garīgās veselības centrs • Prototips (HTML/CSS/JS)</small>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{const y=document.querySelector("[data-year]"); if(y) y.textContent=new Date().getFullYear();});
+</script>
+</body>
+</html>
