@@ -4,23 +4,31 @@
   const stopBtn = document.querySelector("[data-breath-stop]");
   const modeSelect = document.querySelector("#mode");
   const meta = document.querySelector("[data-breath-meta]");
-  if (!circle || !startBtn || !modeSelect) return;
+  if (!circle || !startBtn || !modeSelect || !meta) return;
+
+  function lang() {
+    return window.getCurrentLang ? window.getCurrentLang() : (localStorage.getItem("lang") || "lv");
+  }
+
+  function modeName(value) {
+    return window.t ? window.t(`breathing.mode.${value}`, lang()) : value;
+  }
 
   const MODES = {
-    "478": { name: "4-7-8 tehnika", steps: [
-      { label:"Ieelpo", secs:4, cls:"inhale" },
-      { label:"Aizture", secs:7, cls:"hold" },
-      { label:"Izelpo", secs:8, cls:"exhale" }
+    "478": { name: () => modeName("478"), steps: [
+      { key:"inhale", secs:4, cls:"inhale" },
+      { key:"hold", secs:7, cls:"hold" },
+      { key:"exhale", secs:8, cls:"exhale" }
     ]},
-    "box": { name: "Kvadrāta elpošana", steps: [
-      { label:"Ieelpo", secs:4, cls:"inhale" },
-      { label:"Aizture", secs:4, cls:"hold" },
-      { label:"Izelpo", secs:4, cls:"exhale" },
-      { label:"Aizture", secs:4, cls:"hold" }
+    "box": { name: () => modeName("box"), steps: [
+      { key:"inhale", secs:4, cls:"inhale" },
+      { key:"hold", secs:4, cls:"hold" },
+      { key:"exhale", secs:4, cls:"exhale" },
+      { key:"hold", secs:4, cls:"hold" }
     ]},
-    "belly": { name: "Dziļā vēdera elpošana", steps: [
-      { label:"Ieelpo", secs:5, cls:"inhale" },
-      { label:"Izelpo", secs:6, cls:"exhale" }
+    "belly": { name: () => modeName("belly"), steps: [
+      { key:"inhale", secs:5, cls:"inhale" },
+      { key:"exhale", secs:6, cls:"exhale" }
     ]}
   };
 
@@ -29,12 +37,22 @@
   let idx = 0;
   let remaining = 0;
 
+  function stepLabel(key) {
+    const map = {
+      lv: { inhale: "Ieelpo", exhale: "Izelpo", hold: "Aizture", ready: "Ieelpo" },
+      ru: { inhale: "Вдохни", exhale: "Выдохни", hold: "Задержка", ready: "Вдохни" },
+      en: { inhale: "Inhale", exhale: "Exhale", hold: "Hold", ready: "Inhale" }
+    };
+    const l = lang();
+    return (map[l] || map.lv)[key] || key;
+  }
+
   function setState(step){
     circle.classList.remove("inhale","exhale");
     if (step.cls === "inhale") circle.classList.add("inhale");
     if (step.cls === "exhale") circle.classList.add("exhale");
-    circle.textContent = step.label;
-    meta.textContent = `${step.label} — ${remaining}s`;
+    circle.textContent = stepLabel(step.key);
+    meta.textContent = `${stepLabel(step.key)} — ${remaining}s`;
   }
 
   function tick(){
@@ -57,8 +75,8 @@
     idx = 0;
     const mode = MODES[modeSelect.value] || MODES["478"];
     remaining = mode.steps[0].secs;
-    circle.textContent = "Sākam";
-    window.showToast?.("Elpošanas vingrinājums sākts");
+    circle.textContent = window.t ? window.t("breathing.circle.ready", lang()) : stepLabel("ready");
+    window.showToast?.(window.t ? window.t("breathing.toast.start", lang()) : "Started");
     timer = window.setInterval(tick, 1000);
     tick();
     startBtn.disabled = true;
@@ -70,11 +88,24 @@
     window.clearInterval(timer);
     timer = null;
     circle.classList.remove("inhale","exhale");
-    circle.textContent = "Ieelpo";
-    meta.textContent = "Izvēlies tehniku un nospied “Sākt”.";
+    circle.textContent = window.t ? window.t("breathing.circle.ready", lang()) : stepLabel("ready");
+    meta.textContent = window.t ? window.t("breathing.meta.ready", lang()) : "Choose a technique and press Start.";
     startBtn.disabled = false;
     stopBtn.disabled = true;
-    window.showToast?.("Apturēts");
+    window.showToast?.(window.t ? window.t("breathing.toast.stop", lang()) : "Stopped");
+  }
+
+  function syncTexts() {
+    if (!running) {
+      circle.textContent = window.t ? window.t("breathing.circle.ready", lang()) : stepLabel("ready");
+      meta.textContent = window.t ? window.t("breathing.meta.ready", lang()) : meta.textContent;
+    }
+    startBtn.textContent = window.t ? window.t("breathing.start", lang()) : startBtn.textContent;
+    stopBtn.textContent = window.t ? window.t("breathing.stop", lang()) : stopBtn.textContent;
+    const opts = modeSelect.querySelectorAll("option");
+    opts.forEach((opt) => {
+      opt.textContent = window.t ? window.t(`breathing.option.${opt.value}`, lang()) : opt.textContent;
+    });
   }
 
   startBtn.addEventListener("click", start);
@@ -84,4 +115,6 @@
   });
 
   stopBtn.disabled = true;
+  syncTexts();
+  window.addEventListener("languagechange", syncTexts);
 })();

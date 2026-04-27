@@ -20,7 +20,7 @@
     input.addEventListener("change", () => {
       state[id] = input.checked;
       save(state);
-      window.showToast?.(input.checked ? "Atgādinājums ieslēgts" : "Atgādinājums izslēgts");
+      window.showToast?.(input.checked ? (window.t ? window.t("reminders.toast.on", window.getCurrentLang?.() || "lv") : "On") : (window.t ? window.t("reminders.toast.off", window.getCurrentLang?.() || "lv") : "Off"));
     });
   });
 })();
