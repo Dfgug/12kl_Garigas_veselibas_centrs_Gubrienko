@@ -3,92 +3,126 @@
 <head>
   <title>Dienasgrāmata • Garīgās veselības centrs</title>
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+<body data-page-title="diary.title">
+<a class="skip-link" href="#main" data-i18n="common.skip">Pāriet uz saturu</a>
 
 <header class="site-header">
   <div class="header-hero" style="min-height:420px">
     <div class="navbar container">
       <a class="brand" href="index.html">
-        <span>Garīgās veselības centrs</span>
+        <span data-i18n="common.brand">Garīgās veselības centrs</span>
       </a>
+
       <button class="nav-toggle" type="button"
         data-nav-toggle
         aria-controls="primaryNav"
-        aria-expanded="false"
-        aria-label="Atvērt izvēlni">
+        aria-expanded="false">
         ☰
       </button>
-      <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
-        <a href="breathing.html">Elpošana</a>
-        <a href="diary.html" aria-current="page">Dienasgrāmata</a>
-        <a href="reminders.html">Atgādinājumi</a>
-        <a href="about.html">Par mums</a>
+
+      <nav id="primaryNav" class="primary-nav" data-primary-nav>
+        <a href="breathing.html" data-i18n="common.nav.breathing">Elpošana</a>
+        <a href="diary.html" aria-current="page" data-i18n="common.nav.diary">Dienasgrāmata</a>
+        <a href="reminders.html" data-i18n="common.nav.reminders">Atgādinājumi</a>
+        <a href="about.html" data-i18n="common.nav.about">Par mums</a>
+        <span class="auth-meta">
+          <span id="userEmail" class="user-email"></span>
+          <button id="authBtn" class="btn secondary auth-btn" type="button" data-i18n="common.auth.login">Ienākt</button>
+        </span>
+        <select id="langSelect" aria-label="Valodas izvēle">
+          <option value="lv">LV</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+
       </nav>
     </div>
+
     <div class="hero-content container" style="padding-top:140px">
-      <h1 class="hero-title" style="font-size:40px">Dienasgrāmata</h1>
+      <h1 class="hero-title" style="font-size:40px" data-i18n="diary.hero.title">Dienasgrāmata</h1>
     </div>
   </div>
 </header>
 
 <main id="main" class="page container">
-  <section class="three-col" aria-label="Noskaņojuma pieraksts">
+
+  <section class="three-col">
+
     <div class="panel">
       <div class="cal-head">
-        <button class="btn secondary" type="button" data-prev-month aria-label="Iepriekšējais mēnesis">←</button>
+        <button class="btn secondary" type="button" data-prev-month data-i18n-aria-label="diary.month.prev">←</button>
         <h3 data-month-label>—</h3>
-        <button class="btn secondary" type="button" data-next-month aria-label="Nākamais mēnesis">→</button>
+        <button class="btn secondary" type="button" data-next-month data-i18n-aria-label="diary.month.next">→</button>
       </div>
 
-      <div class="calendar" aria-label="Kalendārs">
+      <div class="calendar">
         <div class="cal-grid" data-calendar></div>
       </div>
-      <p class="helper">Izvēlies dienu, lai saglabātu emociju un piezīmes. Punktiņš zem datuma nozīmē, ka ir ieraksts.</p>
+
+      <p class="helper" data-i18n="diary.helper">
+        Izvēlies dienu, lai pievienotu emociju un piezīmes.
+      </p>
     </div>
 
-    <div class="panel" aria-label="Emociju izvēle">
+    <div class="panel">
       <div class="field">
-        <label>Izvēlies emociju:</label>
-        <div class="emoji-list" role="group" aria-label="Emocijas">
-          <button class="emoji-btn" type="button" data-emoji="😀" aria-pressed="false" aria-label="Priecīgs">😀</button>
-          <button class="emoji-btn" type="button" data-emoji="🙂" aria-pressed="false" aria-label="Mierīgs">🙂</button>
-          <button class="emoji-btn" type="button" data-emoji="😐" aria-pressed="false" aria-label="Neitrāls">😐</button>
-          <button class="emoji-btn" type="button" data-emoji="😟" aria-pressed="false" aria-label="Satraukts">😟</button>
+        <label data-i18n="diary.emotion.label">Izvēlies emociju:</label>
+
+        <div class="emoji-list">
+          <button class="emoji-btn" type="button" data-emoji="😀">😀</button>
+          <button class="emoji-btn" type="button" data-emoji="🙂">🙂</button>
+          <button class="emoji-btn" type="button" data-emoji="😐">😐</button>
+          <button class="emoji-btn" type="button" data-emoji="😟">😟</button>
         </div>
       </div>
 
-      <div class="save-row">
-        <button class="btn" type="button" data-save>Saglabāt</button>
+      <div class="data-actions">
+        <button class="btn secondary" type="button" onclick="exportDiary()" data-i18n="diary.export">Eksportēt</button>
+
+        <input type="file" id="importDiaryFile" hidden onchange="importDiary(event)">
+
+        <button type="button" onclick="document.getElementById('importDiaryFile').click()" data-i18n="diary.import">
+          Importēt
+        </button>
       </div>
     </div>
 
-    <div class="panel" aria-label="Piezīmes">
+    <div class="panel">
       <div class="field">
-        <label for="notes">Piezīmes:</label>
-        <textarea id="notes" placeholder="Ko Tu šodien jūti? Kas palīdzēja / traucēja?"></textarea>
-        <div class="helper">Padoms: ja emocija un piezīmes ir tukšas, saglabāšana dzēsīs ierakstu.</div>
+        <label for="notes" data-i18n="diary.notes.label">Piezīmes:</label>
+        <textarea id="notes" data-i18n-placeholder="diary.notes.placeholder" placeholder="Ko Tu šodien jūti?"></textarea>
       </div>
     </div>
+
   </section>
+
 </main>
 
 <footer class="footer">
   <div class="container">
-    <small>© <span data-year></span> Garīgās veselības centrs • Prototips (HTML/CSS/JS)</small>
+    <small>© <span data-year></span> Garīgās veselības centrs</small>
   </div>
 </footer>
+
 <script src="js/main.js" defer></script>
-<script>
-  document.addEventListener("DOMContentLoaded",()=>{const y=document.querySelector("[data-year]"); if(y) y.textContent=new Date().getFullYear();});
-</script>
 <script src="js/diary.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const y = document.querySelector("[data-year]");
+    if (y) y.textContent = new Date().getFullYear();
+  });
+</script>
+
 </body>
 </html>

@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<a class="skip-link" href="#main">Pāriet uz saturu</a>
+<body data-page-title="about.title">
+<a class="skip-link" href="#main" data-i18n="common.skip">Pāriet uz saturu</a>
 
 <header class="site-header">
   <div class="header-hero" style="min-height:420px">
     <div class="navbar container">
       <a class="brand" href="index.html">
-        <span>Garīgās veselības centrs</span>
+        <span data-i18n="common.brand">Garīgās veselības centrs</span>
       </a>
       <button class="nav-toggle" type="button"
         data-nav-toggle
@@ -27,14 +27,24 @@
         ☰
       </button>
       <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
-        <a href="breathing.html">Elpošana</a>
-        <a href="diary.html">Dienasgrāmata</a>
-        <a href="reminders.html">Atgādinājumi</a>
-        <a href="about.html" aria-current="page">Par mums</a>
+        <a href="breathing.html" data-i18n="common.nav.breathing">Elpošana</a>
+        <a href="diary.html" data-i18n="common.nav.diary">Dienasgrāmata</a>
+        <a href="reminders.html" data-i18n="common.nav.reminders">Atgādinājumi</a>
+        <a href="about.html" aria-current="page" data-i18n="common.nav.about">Par mums</a>
+        <span class="auth-meta">
+          <span id="userEmail" class="user-email"></span>
+          <button id="authBtn" class="btn secondary auth-btn" type="button" data-i18n="common.auth.login">Ienākt</button>
+        </span>
+        <select id="langSelect" aria-label="Valodas izvēle">
+          <option value="lv">LV</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+
       </nav>
     </div>
     <div class="hero-content container" style="padding-top:140px">
-      <h1 class="hero-title" style="font-size:40px">Par mums</h1>
+      <h1 class="hero-title" style="font-size:40px" data-i18n="about.hero.title">Par mums</h1>
     </div>
   </div>
 </header>
@@ -42,22 +52,30 @@
 <main id="main" class="page container">
   <section class="panel about-grid" aria-label="Par mums saturs">
     <div>
-      <p style="margin-top:0">
+      <p style="margin-top:0" data-i18n="about.intro">
         Mūsu mērķis ir palīdzēt jauniešiem rūpēties par garīgo veselību, izmantojot vienkāršus un pieejamus rīkus.
         Apvienojot elpošanas vingrinājumus, noskaņojuma dienasgrāmatu un atgādinājumus, mēs radām vidi,
         kas palīdz saglabāt mieru un līdzsvaru ikdienā.
       </p>
 
-      <h2 style="font-family:Montserrat,system-ui,sans-serif;color:var(--green-dark);margin:22px 0 10px;font-size:22px">Mūsu kontakti:</h2>
+      <h2 style="font-family:Montserrat,system-ui,sans-serif;color:var(--green-dark);margin:22px 0 10px;font-size:22px" data-i18n="about.contacts">Mūsu kontakti:</h2>
       <div class="contact">
-        <div><strong>E-pasts:</strong> <a href="mailto:testpasts@gmail.com">testpasts@gmail.com</a></div>
-        <div><strong>Tālrunis:</strong> <a href="tel:+37127007321">+371 27007321</a></div>
+        <div><strong data-i18n="about.email">E-pasts:</strong> <a href="mailto:testpasts@gmail.com">testpasts@gmail.com</a></div>
+        <div><strong data-i18n="about.phone">Tālrunis:</strong> <a href="tel:+37127007321">+371 27007321</a></div>
       </div>
     </div>
 
-    <div>
-      <img src="assets/team.png" alt="Ilustrācija ar cilvēku grupu" loading="lazy">
+  <div>
+    <div class="form-wrapper">
+      <form id="contactForm">
+        <input type="text" id="name" data-i18n-placeholder="about.form.name" placeholder="Vārds" required>
+        <input type="email" id="email" data-i18n-placeholder="about.form.email" placeholder="Jūsu e-pasta adrese" required>
+        <textarea id="message" data-i18n-placeholder="about.form.message" placeholder="Jūsu ziņa" required></textarea>
+        <button type="submit" data-i18n="about.form.send">Sūtīt</button>
+      </form>
+      <p id="status"></p>
     </div>
+  </div>
   </section>
 </main>
 

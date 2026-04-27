@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<a class="skip-link" href="#main">Pāriet uz saturu</a>
+<body data-page-title="breathing.title">
+<a class="skip-link" href="#main" data-i18n="common.skip">Pāriet uz saturu</a>
 
 <header class="site-header">
   <div class="header-hero" style="min-height:420px">
     <div class="navbar container">
       <a class="brand" href="index.html">
-        <span>Garīgās veselības centrs</span>
+        <span data-i18n="common.brand">Garīgās veselības centrs</span>
       </a>
       <button class="nav-toggle" type="button"
         data-nav-toggle
@@ -27,14 +27,24 @@
         ☰
       </button>
       <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
-        <a href="breathing.html" aria-current="page">Elpošana</a>
-        <a href="diary.html">Dienasgrāmata</a>
-        <a href="reminders.html">Atgādinājumi</a>
-        <a href="about.html">Par mums</a>
+        <a href="breathing.html" aria-current="page" data-i18n="common.nav.breathing">Elpošana</a>
+        <a href="diary.html" data-i18n="common.nav.diary">Dienasgrāmata</a>
+        <a href="reminders.html" data-i18n="common.nav.reminders">Atgādinājumi</a>
+        <a href="about.html" data-i18n="common.nav.about">Par mums</a>
+        <span class="auth-meta">
+          <span id="userEmail" class="user-email"></span>
+          <button id="authBtn" class="btn secondary auth-btn" type="button" data-i18n="common.auth.login">Ienākt</button>
+        </span>
+        <select id="langSelect" aria-label="Valodas izvēle">
+          <option value="lv">LV</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+
       </nav>
     </div>
     <div class="hero-content container" style="padding-top:140px">
-      <h1 class="hero-title" style="font-size:40px">Elpošanas vingrinājumi</h1>
+      <h1 class="hero-title" style="font-size:40px" data-i18n="breathing.hero.title">Elpošanas vingrinājumi</h1>
     </div>
   </div>
 </header>
@@ -43,48 +53,48 @@
   <section class="two-col" aria-label="Elpošanas vingrinājumi un taimeris">
     <div class="panel">
       <div class="field">
-        <label for="mode">Tehnika</label>
+        <label for="mode" data-i18n="breathing.technique">Tehnika</label>
         <select id="mode" aria-label="Izvēlies elpošanas tehniku">
-          <option value="478">4-7-8 tehnika</option>
-          <option value="belly">Dziļā vēdera elpošana</option>
-          <option value="box">Kvadrāta elpošana</option>
+          <option value="478" data-i18n-option="breathing.option.478">4-7-8 tehnika</option>
+          <option value="belly" data-i18n-option="breathing.option.belly">Dziļā vēdera elpošana</option>
+          <option value="box" data-i18n-option="breathing.option.box">Kvadrāta elpošana</option>
         </select>
-        <p class="helper">Izvēlies tehniku un nospied “Sākt”. Ja nepieciešams — “Apturēt”.</p>
+        <p class="helper" data-i18n="breathing.helper">Izvēlies tehniku un nospied “Sākt”. Ja nepieciešams — “Apturēt”.</p>
       </div>
 
       <div class="exercise-list" style="margin-top:10px">
         <article class="exercise">
           <div class="badge" aria-hidden="true">4-7-8</div>
           <div>
-            <h3>4-7-8 tehnika</h3>
-            <p>Vienkārša metode, kas palīdz ātri nomierināties: ieelpa uz 4 sekundēm, aizture uz 7, izelpa uz 8 sekundēm.</p>
+            <h3 data-i18n="breathing.exercise.478.title">4-7-8 tehnika</h3>
+            <p data-i18n="breathing.exercise.478.text">Vienkārša metode, kas palīdz ātri nomierināties: ieelpa uz 4 sekundēm, aizture uz 7, izelpa uz 8 sekundēm.</p>
           </div>
         </article>
 
         <article class="exercise">
           <div class="badge" aria-hidden="true">Deep</div>
           <div>
-            <h3>Dziļā vēdera elpošana</h3>
-            <p>Elpo ar diafragmu, lai palielinātu skābekļa daudzumu un samazinātu spriedzi ķermenī.</p>
+            <h3 data-i18n="breathing.exercise.belly.title">Dziļā vēdera elpošana</h3>
+            <p data-i18n="breathing.exercise.belly.text">Elpo ar diafragmu, lai palielinātu skābekļa daudzumu un samazinātu spriedzi ķermenī.</p>
           </div>
         </article>
 
         <article class="exercise">
           <div class="badge" aria-hidden="true">Quad</div>
           <div>
-            <h3>Kvadrāta elpošana</h3>
-            <p>Ieelpa – 4 sekundes → aizture – 4 sekundes → izelpa – 4 sekundes → aizture – 4 sekundes. Ļoti efektīva stresa mazināšanai.</p>
+            <h3 data-i18n="breathing.exercise.box.title">Kvadrāta elpošana</h3>
+            <p data-i18n="breathing.exercise.box.text">Ieelpa – 4 sekundes → aizture – 4 sekundes → izelpa – 4 sekundes → aizture – 4 sekundes. Ļoti efektīva stresa mazināšanai.</p>
           </div>
         </article>
       </div>
     </div>
 
     <div class="panel breath-wrap">
-      <div class="breath-circle" data-breath-circle aria-live="polite">Ieelpo</div>
-      <div class="breath-meta" data-breath-meta>Izvēlies tehniku un nospied “Sākt”.</div>
+      <div class="breath-circle" data-breath-circle aria-live="polite" data-i18n="breathing.circle.ready">Ieelpo</div>
+      <div class="breath-meta" data-breath-meta data-i18n="breathing.meta.ready">Izvēlies tehniku un nospied “Sākt”.</div>
       <div style="display:flex;gap:12px;margin-top:18px">
-        <button class="btn" type="button" data-breath-start>Sākt</button>
-        <button class="btn secondary" type="button" data-breath-stop>Apturēt</button>
+        <button class="btn" type="button" data-breath-start data-i18n="breathing.start">Sākt</button>
+        <button class="btn secondary" type="button" data-breath-stop data-i18n="breathing.stop">Apturēt</button>
       </div>
     </div>
   </section>

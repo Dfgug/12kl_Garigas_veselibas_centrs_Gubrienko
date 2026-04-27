@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<a class="skip-link" href="#main">Pāriet uz saturu</a>
+<body data-page-title="reminders.title">
+<a class="skip-link" href="#main" data-i18n="common.skip">Pāriet uz saturu</a>
 
 <header class="site-header">
   <div class="header-hero" style="min-height:420px">
     <div class="navbar container">
       <a class="brand" href="index.html">
-        <span>Garīgās veselības centrs</span>
+        <span data-i18n="common.brand">Garīgās veselības centrs</span>
       </a>
       <button class="nav-toggle" type="button"
         data-nav-toggle
@@ -27,29 +27,39 @@
         ☰
       </button>
       <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
-        <a href="breathing.html">Elpošana</a>
-        <a href="diary.html">Dienasgrāmata</a>
-        <a href="reminders.html" aria-current="page">Atgādinājumi</a>
-        <a href="about.html">Par mums</a>
+        <a href="breathing.html" data-i18n="common.nav.breathing">Elpošana</a>
+        <a href="diary.html" data-i18n="common.nav.diary">Dienasgrāmata</a>
+        <a href="reminders.html" aria-current="page" data-i18n="common.nav.reminders">Atgādinājumi</a>
+        <a href="about.html" data-i18n="common.nav.about">Par mums</a>
+        <span class="auth-meta">
+          <span id="userEmail" class="user-email"></span>
+          <button id="authBtn" class="btn secondary auth-btn" type="button" data-i18n="common.auth.login">Ienākt</button>
+        </span>
+        <select id="langSelect" aria-label="Valodas izvēle">
+          <option value="lv">LV</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+
       </nav>
     </div>
     <div class="hero-content container" style="padding-top:140px">
-      <h1 class="hero-title" style="font-size:40px">Atgādinājumi</h1>
+      <h1 class="hero-title" style="font-size:40px" data-i18n="reminders.hero.title">Atgādinājumi</h1>
     </div>
   </div>
 </header>
 
 <main id="main" class="page container">
   <section class="panel" aria-label="Atgādinājumu saraksts">
-    <p class="muted" style="margin-top:0">
+    <p class="muted" style="margin-top:0" data-i18n="reminders.intro">
       Iestatiet ikdienas atgādinājumus, lai neaizmirstu par elpošanas vingrinājumiem, noskaņojuma pierakstiem un veselīgiem ieradumiem.
     </p>
 
     <div class="reminders-list" data-reminders>
       <div class="reminder">
         <div>
-          <div class="name">Elpošanas pauze – katru dienu plkst. 10:00</div>
-          <div class="muted" style="font-size:13px">Īss vingrinājums dienas vidū.</div>
+          <div class="name" data-i18n="reminders.item1.title">Elpošanas pauze – katru dienu plkst. 10:00</div>
+          <div class="muted" style="font-size:13px" data-i18n="reminders.item1.text">Īss vingrinājums dienas vidū.</div>
         </div>
         <label class="switch" aria-label="Pārslēgt elpošanas pauzes atgādinājumu">
           <input id="r-breath" type="checkbox">
@@ -59,8 +69,8 @@
 
       <div class="reminder">
         <div>
-          <div class="name">Noskaņojuma pieraksts – pirms miega</div>
-          <div class="muted" style="font-size:13px">Piefiksē sajūtas un domas dienas beigās.</div>
+          <div class="name" data-i18n="reminders.item2.title">Noskaņojuma pieraksts – pirms miega</div>
+          <div class="muted" style="font-size:13px" data-i18n="reminders.item2.text">Piefiksē sajūtas un domas dienas beigās.</div>
         </div>
         <label class="switch" aria-label="Pārslēgt noskaņojuma pieraksta atgādinājumu">
           <input id="r-diary" type="checkbox">
@@ -70,8 +80,8 @@
 
       <div class="reminder">
         <div>
-          <div class="name">Iknedēļas pārskats – svētdienās plkst. 20:00</div>
-          <div class="muted" style="font-size:13px">Paskaties, kas palīdzēja visvairāk.</div>
+          <div class="name" data-i18n="reminders.item3.title">Iknedēļas pārskats – svētdienās plkst. 20:00</div>
+          <div class="muted" style="font-size:13px" data-i18n="reminders.item3.text">Paskaties, kas palīdzēja visvairāk.</div>
         </div>
         <label class="switch" aria-label="Pārslēgt iknedēļas pārskata atgādinājumu">
           <input id="r-weekly" type="checkbox">

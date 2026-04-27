@@ -13,13 +13,13 @@
 </head>
 
 <body class="home">
-<a class="skip-link" href="#main">Pāriet uz saturu</a>
+<a class="skip-link" href="#main" data-i18n="common.skip">Pāriet uz saturu</a>
 
 <header class="site-header">
   <div class="header-hero">
     <div class="navbar container">
       <a class="brand" href="index.html">
-        <span>Garīgās veselības centrs</span>
+        <span data-i18n="common.brand">Garīgās veselības centrs</span>
       </a>
       <button class="nav-toggle" type="button"
         data-nav-toggle
@@ -29,10 +29,21 @@
         ☰
       </button>
       <nav id="primaryNav" class="primary-nav" data-primary-nav aria-label="Galvenā navigācija">
-        <a href="breathing.html">Elpošana</a>
-        <a href="diary.html">Dienasgrāmata</a>
-        <a href="reminders.html">Atgādinājumi</a>
-        <a href="about.html">Par mums</a>
+        <a href="breathing.html" data-i18n="common.nav.breathing">Elpošana</a>
+        <a href="diary.html" data-i18n="common.nav.diary">Dienasgrāmata</a>
+        <a href="reminders.html" data-i18n="common.nav.reminders">Atgādinājumi</a>
+        <a href="about.html" data-i18n="common.nav.about">Par mums</a>
+        <span class="auth-meta">
+          <span id="userEmail" class="user-email"></span>
+          <button id="authBtn" class="btn secondary auth-btn" type="button" data-i18n="common.auth.login">Ienākt</button>
+        </span>
+        <select id="langSelect" aria-label="Valodas izvēle">
+          <option value="lv">LV</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+
+
       </nav>
     </div>
 </div>
@@ -42,8 +53,8 @@
   
   <section class="page-hero" aria-label="Ievads">
     <div class="container">
-      <h1 class="hero-title">Atbrīvo prātu. Uzlabo savu ikdienu.</h1>
-      <p class="hero-subtitle">
+      <h1 class="hero-title" data-i18n="index.hero.title">Atbrīvo prātu. Uzlabo savu ikdienu.</h1>
+      <p class="hero-subtitle" data-i18n="index.hero.subtitle">
         Stress ir ikdienas daļa, bet ar to nav jācīnās vienatnē. Mūsu mājaslapa piedāvā vienkāršus rīkus jauniešiem,
         lai mazinātu trauksmi, uzlabotu noskaņojumu un atrastu līdzsvaru.
         Ar elpošanas vingrinājumiem, relaksācijas tehnikām un noskaņojuma dienasgrāmatu rūpes par garīgo veselību kļūst
@@ -52,34 +63,34 @@
     </div>
   </section>
 
-  <div class="container"><h2 class="section-title">Mēs esam šeit, lai palīdzētu tev atrast mieru un līdzsvaru.</h2>
+  <div class="container"><h2 class="section-title" data-i18n="index.section.title">Mēs esam šeit, lai palīdzētu tev atrast mieru un līdzsvaru.</h2>
 
   <section class="grid-3" aria-label="Galvenās iespējas">
     <article class="card">
       <div class="icon" aria-hidden="true">
         <img src="assets/icons/lps.png" alt="" width="44" height="44">
       </div>
-      <h3>Elpo vieglāk.</h3>
-      <p>Veic īsus elpošanas un relaksācijas vingrinājumus, lai mazinātu stresu jebkurā laikā un vietā.</p>
-      <a class="btn-link" href="breathing.html">Uzzināt vairāk</a>
+      <h3 data-i18n="index.card.1.title">Elpo vieglāk.</h3>
+      <p data-i18n="index.card.1.text">Veic īsus elpošanas un relaksācijas vingrinājumus, lai mazinātu stresu jebkurā laikā un vietā.</p>
+      <a class="btn-link" href="breathing.html" data-i18n="index.card.1.link">Uzzināt vairāk</a>
     </article>
 
     <article class="card">
       <div class="icon" aria-hidden="true">
         <img src="assets/icons/blk.png" alt="" width="44" height="44">
       </div>
-      <h3>Pieraksti noskaņojumu.</h3>
-      <p>Izmanto vienkāršu dienasgrāmatu, lai atspoguļotu savas sajūtas un sekotu progresam.</p>
-      <a class="btn-link" href="diary.html">Uzzināt vairāk</a>
+      <h3 data-i18n="index.card.2.title">Pieraksti noskaņojumu.</h3>
+      <p data-i18n="index.card.2.text">Izmanto vienkāršu dienasgrāmatu, lai atspoguļotu savas sajūtas un sekotu progresam.</p>
+      <a class="btn-link" href="diary.html" data-i18n="index.card.2.link">Uzzināt vairāk</a>
     </article>
 
     <article class="card">
       <div class="icon" aria-hidden="true">
         <img src="assets/icons/lds.png" alt="" width="44" height="44">
       </div>
-      <h3>Atrodi līdzsvaru.</h3>
-      <p>Izveido ikdienas rutīnu ar atgādinājumiem un ieradumiem, kas stiprina labsajūtu.</p>
-      <a class="btn-link" href="reminders.html">Uzzināt vairāk</a>
+      <h3 data-i18n="index.card.3.title">Atrodi līdzsvaru.</h3>
+      <p data-i18n="index.card.3.text">Izveido ikdienas rutīnu ar atgādinājumiem un ieradumiem, kas stiprina labsajūtu.</p>
+      <a class="btn-link" href="reminders.html" data-i18n="index.card.3.link">Uzzināt vairāk</a>
     </article>
   </section>
   </div>
